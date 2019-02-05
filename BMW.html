@@ -1,0 +1,258 @@
+<html>
+
+<head>
+	<meta charset = "utf-8">
+	<title>Autohaus MAXIMUS</title>
+	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+</head>
+	<style>
+	
+	body {
+			
+		background-color: #F5F5DC;
+	}
+	
+	h1	{
+		border-bottom: 1px solid black; 
+	}
+	p	{
+		font-family : calibri light;
+		color: black; 
+		font-size: 24px;
+	}
+	blockquote {
+		font-family : calibri light;
+		color: black;
+		font-size: 24px;
+	}
+
+		
+	</style>
+	
+	<img src="logo.jpg" alt="logo" height="200"/>
+	
+	<h2>Willkommen bei MAXIMUS! <br><br>
+	Bei uns können sie Kraftfahrzeuge aller Art mieten, kaufen und Probefahren!</h2>
+	<img src="autohaus.jpg" alt="haus" />
+	
+	<h1></h1>
+	<!--<img src="lambo_dead.jpg" alt="crash" />-->
+	<img src="siegel.png" width="90"  alt="nice" style="float: left;"/>
+	<p>
+		<br>An unserem Standort in Haßfurt vereinen wir besondere Fahrzeuge mit einem besonderen Ambiente.
+		<br>Unser Autohaus bildet den perfekten Rahmen für unsere exzellente Auswahl an Oldtimern, Luxus-Limousinen und Oberklasse-Sportwagen.
+	</p>
+	<br>
+	<br>
+	<h1></h1>
+	<br>
+	
+	<br>
+	<fieldset>
+	<legend> Über uns </legend>
+	<p style="text-align: left">Unsere Öffnungszeiten
+	Öffnungszeiten Autohaus
+	Mo - Fr: 08.00 - 18.00 Uhr
+	Sa: 09.00 - 14.00 Uhr.
+	Außerhalb der gesetzlichen Öffnungszeiten sowie Sonntags keine Beratung und kein Verkauf. 
+	
+	<br>
+	<br>
+	<br>
+	<br>
+	<table>
+	<tr>
+	<td>Wir bieten Ihnen eine Vielzahl an Möglichkeiten in unserem Unternehmen. 
+	Unsere Leistungen
+	Im Autohaus MAXIMUS erhalten Sie alles aus einer Hand – vom Verkauf von Neuwagen über den An- und Verkauf von Gebrauchtwagen
+	bis zu einem umfassenden Reparatur- und Serviceangebot in unseren Werkstätten. 
+	Mit den Marken BMW und Mercedes-Benz bieten wir Ihnen das gesamte Fahrzeugsortiment, 
+	ganz egal ob Sie sich für einen Kleinwagen, ein Familienauto oder ein Nutzfahrzeug interessieren. 
+	In unseren Autowerkstätten bieten wir Ihnen von Ölwechsel bis Jahresinspektion alle wichtigen Reparatur- und Serviceleistungen an.
+	<br>
+	<br>
+	<br>
+	Unser Anspruch
+	Beratung, Verkauf oder Service – wir messen unseren Erfolg an Ihrer Zufriedenheit. 
+	Weil wir wollen, dass Sie das Fahren genießen und sich hundertprozentig auf Ihr Auto verlassen können. 
+	Wir hören Ihnen zu und machen Ihnen ein individuelles Angebot. Dabei reden wir lieber Klartext als nur drumherum. 
+	Und wir stehen natürlich zu unserem Wort – mit unserem Service-Brief bekommen Sie das von uns bei jedem Reparaturauftrag schriftlich.</p>
+	<td>
+	<br>
+	<br>
+	<br><td>
+	<img src="garage.jpg" alt="garage" style="float:right;" /></td></tr>
+	</fieldset>
+	</table>
+	
+	<fieldset>
+<legend> Wagen wählen / Neuwagen konfigurieren </legend>
+<h3> Wählen Sie Ihr bevorzugtes Auto! </h3>
+<h4>(Mehr Fahrzeuge folgen in Kürze)</h4>
+	<select id="dropdown" onchange="abfrage(BMW, Nissan, Ferrari)">
+		<option value=""></option>
+		<option value="BMW">BMW e36</option>
+		<option value="Ferrari">Ferrari 488</option>
+		<option value="Nissan">Nissan (NISMO) GT-R 2018 </option>
+		<option value="Lamborghini">Lamborghini Gallardo </option>
+		<option value="Delorean">DMC 12 (DeLorean) </option>
+		<option value="Volkswagen">VW Scirocco </option>
+		<option value="Ford">Ford Mustang 2012 </option>
+		<option value="audi">AUDI TT RS QUATTRO Clubsport </option>
+	</select>
+	<br>
+<h3> Hier können Sie ihren Neuwagen Konfigurieren </h3>
+<button><a href = "config.html">Auto konfigurieren</a></button>
+
+	</fieldset>
+	
+	<fieldset>
+	<center>
+	<legend>Kundenrezensionen</legend>
+	<blockquote>"Freundliche Mitarbeiter, gute und saubere Fahrzeuge. Was will man mehr?"
+	<cite>Herbert Müllermann, zufriedener Kunde</cite></blockquote>
+	<img src="happy.jpg" alt="happy" />
+	
+	
+	<h1></h1>
+	<br>
+	<img src="rezensionen.png" alt="rezensionen" />
+	<br>
+	<img src="unbenannt.png" alt="rezi2" />
+	</fieldset>
+	</center>
+	<h4>Hörprobe unserer Hauseigenen Tuning-Werkstatt</h4>
+	
+	<audio controls
+	
+	src="antilag.mp3" 
+	type="audio/mp3"
+	
+	</audio>
+	
+<body>
+
+	<script>
+	"use strict"
+	//Konstruktor (=Bauplan) für Auto-Objekte 
+	function Fabrikfunktion(nummernschild,geschwindigkeit,tankinhalt,bildpfad){
+	this.nummernschild = nummernschild;
+	this.geschwindigkeit = 0;
+	this.tankinhalt = 20;
+	this.health = 100;
+	this.tankMax= 70;
+	this.gefahreneKM = 0;
+	this.bildpfad = bildpfad;
+	this.gasgeben = function(gas){
+	this.geschwindigkeit = this.geschwindigkeit+gas;
+		document.write("Der Wagen ("+this.nummernschild+") fährt jetzt "+this.geschwindigkeit+" KM/H.<br><br>");
+	};
+	//macht Auto langsamer
+	this.bremsen = function(bremse){
+	this.geschwindigkeit = this.geschwindigkeit-bremse;
+		document.write("Das Auto ("+this.nummernschild+") wird auf "+this.geschwindigkeit+" KM/H gebremst.<br><br>");
+	};
+	this.tanken = function(tanken){
+	this.tankinhalt=this.tankinhalt+tanken;
+		document.write("Das KFZ ("+this.nummernschild+") hat "+this.tankinhalt+"Liter im Tank.<br><br>");
+	};
+	//zeigt den status an
+	this.statusanzeigen = function(){
+		document.write("*IHR STATUS*<br> Im Moment fährt ihr Auto ("+this.nummernschild+") "+this.geschwindigkeit+" KM/H, hat "+(this.tankinhalt/this.tankMax*100).toFixed(2)+" % | "+this.tankinhalt+" Liter im Tank und "+this.health+" HP als Zustand.<br><br>");
+		document.write("<br><img src="+this.bildpfad+"></img><br><br><br>");
+	};
+	
+	this.crash = function(crash) {
+	this.health = this.health-crash;
+		document.write("Ihr Auto ("+this.nummernschild+"), hat noch "+this.health+" HP.<br><br>");
+	};
+	this.gefahreneKM = function(gefahreneKM){
+		this.tankinhalt=this.tankinhalt-gefahreneKM;
+	};
+	
+	
+	}
+	//Anlegen der Auto-objekte
+	var BMW	= new Fabrikfunktion("EBN B 1337",0,0, "bmw.png");
+	var Nissan = new Fabrikfunktion("Nismo GTR 1",0,0, "nissan.png");
+	var Ferrari	= new Fabrikfunktion("RA RI 488",0,0, "ferrari.png");
+	var Lamborghini = new Fabrikfunktion("HAS G 10",0,0,"lamborghini.png")
+	var Delorean = new Fabrikfunktion("ABD 72 W",0,0,"dmc.png")	
+	var Volkswagen = new Fabrikfunktion("VW N 1",0,0,"vw.png")
+	var Ford = new Fabrikfunktion("JP K 500",0,0,"ford.png")
+	var audi = new Fabrikfunktion("IN NO 69",0,0,"audi.png")
+	
+	//Abfrage
+	function abfrage(BMW, Nissan, Ferrari){
+	var x = document.getElementById("dropdown").value;
+	
+	if(x == "BMW"){
+	BMW.tanken(parseInt(prompt("Wie viel Liter tankst du? (20 Liter drin/max. 70 Liter)")));
+	BMW.gasgeben(parseInt(prompt("Wie schnell fährst du?")));
+	BMW.gefahreneKM(parseInt(prompt("Wie viele Kilometer wurden bereits zurück gelegt?")));
+	BMW.bremsen(parseInt(prompt("Wie stark bremst du ab? (in KM/H)")));
+	BMW.crash(parseInt(prompt("Unfall? (in %)")));
+	BMW.statusanzeigen();
+	}
+	
+	if(x == "Nissan"){
+	Nissan.tanken(parseInt(prompt("Wie viel Liter tankst du? (20 Liter drin/max. 70 Liter)")));
+	Nissan.gasgeben(parseInt(prompt("Wie schnell fährst du?")));
+	Nissan.gefahreneKM(parseInt(prompt("Wie viele Kilometer wurden bereits zurück gelegt?")));
+	Nissan.bremsen(parseInt(prompt("Wie stark bremst du ab? (in KM/H)")));
+	Nissan.crash(parseInt(prompt("Unfall? (in %)")));
+	Nissan.statusanzeigen();
+	}
+	if(x == "Ferrari"){
+	Ferrari.tanken(parseInt(prompt("Wie viel Liter tankst du? (20 Liter drin/max. 70 Liter)")));
+	Ferrari.gasgeben(parseInt(prompt("Wie schnell fährst du?")));
+	Ferrari.gefahreneKM(parseInt(prompt("Wie viele Kilometer wurden bereits zurück gelegt?")));
+	Ferrari.bremsen(parseInt(prompt("Wie stark bremst du ab? (in KM/H)")));
+	Ferrari.crash(parseInt(prompt("Unfall? (in %)")));
+	Ferrari.statusanzeigen();
+	}
+	if(x == "Lamborghini"){
+	Lamborghini.tanken(parseInt(prompt("Wie viel Liter tankst du? (20 Liter drin/max. 70 Liter)")));
+	Lamborghini.gasgeben(parseInt(prompt("Wie schnell fährst du?")));
+	Lamborghini.gefahreneKM(parseInt(prompt("Wie viele Kilometer wurden bereits zurück gelegt?")));
+	Lamborghini.bremsen(parseInt(prompt("Wie stark bremst du ab? (in KM/H)")));
+	Lamborghini.crash(parseInt(prompt("Unfall? (in %)")));
+	Lamborghini.statusanzeigen();
+	}
+	if(x == "Delorean"){
+	Delorean.tanken(parseInt(prompt("Wie viel Liter tankst du? (20 Liter drin/max. 70 Liter)")));
+	Delorean.gasgeben(parseInt(prompt("Wie schnell fährst du?")));
+	Delorean.gefahreneKM(parseInt(prompt("Wie viele Kilometer wurden bereits zurück gelegt?")));
+	Delorean.bremsen(parseInt(prompt("Wie stark bremst du ab? (in KM/H)")));
+	Delorean.crash(parseInt(prompt("Unfall? (in %)")));
+	Delorean.statusanzeigen();
+	}
+	if(x == "Volkswagen"){
+	Volkswagen.tanken(parseInt(prompt("Wie viel Liter tankst du? (20 Liter drin/max. 70 Liter)")));
+	Volkswagen.gasgeben(parseInt(prompt("Wie schnell fährst du?")));
+	Volkswagen.gefahreneKM(parseInt(prompt("Wie viele Kilometer wurden bereits zurück gelegt?")));
+	Volkswagen.bremsen(parseInt(prompt("Wie stark bremst du ab? (in KM/H)")));
+	Volkswagen.crash(parseInt(prompt("Unfall? (in %)")));
+	Volkswagen.statusanzeigen();
+	}
+	if(x == "Ford"){
+	Ford.tanken(parseInt(prompt("Wie viel Liter tankst du? (20 Liter drin/max. 70 Liter)")));
+	Ford.gasgeben(parseInt(prompt("Wie schnell fährst du?")));
+	Ford.gefahreneKM(parseInt(prompt("Wie viele Kilometer wurden bereits zurück gelegt?")));
+	Ford.bremsen(parseInt(prompt("Wie stark bremst du ab? (in KM/H)")));
+	Ford.crash(parseInt(prompt("Unfall? (in %)")));
+	Ford.statusanzeigen();
+	}
+	if(x == "audi"){
+	audi.tanken(parseInt(prompt("Wie viel Liter tankst du? (20 Liter drin/max. 70 Liter)")));
+	audi.gasgeben(parseInt(prompt("Wie schnell fährst du?")));
+	audi.gefahreneKM(parseInt(prompt("Wie viele Kilometer wurden bereits zurück gelegt?")));
+	audi.bremsen(parseInt(prompt("Wie stark bremst du ab? (in KM/H)")));
+	audi.crash(parseInt(prompt("Unfall? (in %)")));
+	audi.statusanzeigen();
+	}
+	}
+	</script>
+</body>
+
+</html>
